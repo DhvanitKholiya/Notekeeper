@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:notekeeper/helpers/firestore_helpers.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
+import '../../helpers/firebase_auth_helper.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -95,7 +97,21 @@ class _HomePageState extends State<HomePage> {
                             child: ListTile(
                               title: Text(data[index]['title']),
                               subtitle: Text(data[index]['description']),
-                              // tileColor: Colors.purple,
+                              trailing: Column(
+                                children: [
+                                  const SizedBox(height: 22,),
+                                  Text(
+                                    Global.time,
+                                    style: const TextStyle(
+                                        fontSize: 12, fontWeight: FontWeight.w500),
+                                  ),
+                                  Text(
+                                    Global.date,
+                                    style: const TextStyle(
+                                        fontSize: 12, fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -192,5 +208,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-// https://png.pngtree.com/background/20210709/original/pngtree-color-creative-border-background-picture-image_921203.jpg

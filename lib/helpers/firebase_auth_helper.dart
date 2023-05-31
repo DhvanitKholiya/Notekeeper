@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:intl/intl.dart';
 
 class Firebase_auth_helper {
   Firebase_auth_helper._();
@@ -79,4 +80,9 @@ class Firebase_auth_helper {
     }
     return res;
   }
+}
+
+class Global{
+  static String date = DateFormat('dd/mm/yyyy').format(DateTime.now());
+  static String time = DateFormat('HH:mm a').format(DateTime.now());
 }
